@@ -8,7 +8,7 @@ const Card = () => {
       <div className='w-full h-2/3 bg-neutral-100 rounded-md'></div>
       <div className='w-full h-1/2 pt-2'>
         <Link
-          to={""}
+          to={"/product/1"}
           className='font-medium hover:underline underline-offset-2'
         >
           Name

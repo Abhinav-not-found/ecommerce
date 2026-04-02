@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <Container>
       <main>
-        <div className='grid grid-cols-1 md:grid-cols-6 pl-5 md:pl-0 gap-4 gap-y-6'>
+        <div className='grid grid-cols-1 md:grid-cols-6 gap-4 gap-y-6'>
           <Card />
         </div>
       </main>

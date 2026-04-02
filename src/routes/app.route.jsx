@@ -5,8 +5,10 @@ import Login from "@/pages/auth/login"
 import Register from "@/pages/auth/register"
 import Home from "@/pages/home"
 import Landing from "@/pages/landing"
+import ProductDetail from "@/pages/product-detail"
 import ProtectedRoute from "@/routes/protected.route"
 import PublicRoute from "./public.route"
+import Cart from "@/pages/cart"
 
 const AppRoute = () => {
   const router = createBrowserRouter([
@@ -27,6 +29,22 @@ const AppRoute = () => {
           element: (
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/cart",
+          element: (
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/product/:id",
+          element: (
+            <ProtectedRoute>
+              <ProductDetail />
             </ProtectedRoute>
           ),
         },

@@ -1,4 +1,4 @@
-import { LogOut } from "lucide-react"
+import { LogOut, ShoppingBag } from "lucide-react"
 import { Link } from "react-router"
 import { useAuth } from "@/context/authContext"
 import Button from "../ui/button"
@@ -10,7 +10,10 @@ const Navbar = () => {
     <header className='h-14 px-10 w-full flex justify-between items-center'>
       <Logo to={loggedInUser && "/home"} />
       {loggedInUser ? (
-        <LogoutBtn setLoggedInUser={setLoggedInUser} />
+        <div className='flex gap-2'>
+          <CartBtn />
+          <LogoutBtn setLoggedInUser={setLoggedInUser} />
+        </div>
       ) : (
         <LoginBtn />
       )}
@@ -40,5 +43,15 @@ const LogoutBtn = ({ setLoggedInUser }) => {
     >
       <LogOut className='size-4' /> Logout
     </Button>
+  )
+}
+const CartBtn = () => {
+  return (
+    <Link to={"/cart"}>
+      <Button variant='ghost' className={"flex items-center gap-2 font-normal"}>
+        <ShoppingBag className='size-4' />
+        <p>Cart</p>
+      </Button>
+    </Link>
   )
 }

@@ -44,9 +44,10 @@ const LoginForm = () => {
       </Field>
       <Field name={"password"} error={errors.password}>
         <Input
-          type='password'
+          type='text'
           name='password'
-          placeholder={""}
+          placeholder={"● ● ● ● ●"}
+          className="font-mono"
           register={register}
           rules={{ required: "Password is required" }}
           errors={errors}

@@ -34,7 +34,11 @@ const AppRoute = () => {
     },
     {
       path: "/auth",
-      element: <AuthLayout />,
+      element: (
+        <PublicRoute>
+          <AuthLayout />
+        </PublicRoute>
+      ),
       children: [
         {
           index: true,

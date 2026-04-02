@@ -2,19 +2,26 @@ import { ShoppingBag } from "lucide-react"
 import { Link } from "react-router"
 import Button from "./button"
 
-const Card = () => {
+const Card = ({ data }) => {
   return (
-    <div className='size-52 p-2 pb-4 rounded-lg outline outline-neutral-300'>
-      <div className='w-full h-2/3 bg-neutral-100 rounded-md'></div>
-      <div className='w-full h-1/2 pt-2'>
+    <div className='size-52 h-56 p-2 pb-4 rounded-lg outline outline-neutral-300'>
+      <div className='w-full h-32 bg-neutral-100 rounded-md'>
+        <img
+          src={data.images[0]}
+          alt={data.title}
+          className='object-cover w-full h-full'
+          loading='lazy'
+        />
+      </div>
+      <div className='w-full h-1/2 pb-2 flex flex-col justify-center gap-2'>
         <Link
-          to={"/product/1"}
-          className='font-medium hover:underline underline-offset-2'
+          to={`/product/${data.id}`}
+          className='text-[16px] font-medium hover:underline underline-offset-2 line-clamp-1'
         >
-          Name
+          {data.title}
         </Link>
         <div className='flex justify-between items-center'>
-          <p className='text-sm'>price</p>
+          <p className='text-sm'>${data.price}</p>
           <Button size='icon' variant='ghost' className={" "}>
             <ShoppingBag className='size-4 text-neutral-500' />
           </Button>

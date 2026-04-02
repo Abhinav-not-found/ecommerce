@@ -2,11 +2,14 @@ import { createRoot } from "react-dom/client"
 import "./index.css"
 import { Toaster } from "sonner"
 import { AuthProvider } from "./context/authContext"
+import { ProductProvider } from "./context/productContext"
 import AppRoute from "./routes/app.route"
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <AppRoute />
-    <Toaster />
+    <ProductProvider>
+      <AppRoute />
+      <Toaster />
+    </ProductProvider>
   </AuthProvider>,
 )

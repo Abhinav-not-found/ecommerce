@@ -18,7 +18,9 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        if (
+        if (!registeredUser) {
+          toast.error("User not registered")
+        } else if (
           registeredUser.email === data.email &&
           registeredUser.password === data.password
         ) {
@@ -47,7 +49,7 @@ const LoginForm = () => {
           type='text'
           name='password'
           placeholder={"● ● ● ● ●"}
-          className="font-mono"
+          className='font-mono'
           register={register}
           rules={{ required: "Password is required" }}
           errors={errors}

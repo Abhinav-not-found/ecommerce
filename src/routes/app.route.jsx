@@ -6,6 +6,7 @@ import Register from "@/pages/auth/register"
 import Home from "@/pages/home"
 import Landing from "@/pages/landing"
 import ProtectedRoute from "@/routes/protected.route"
+import PublicRoute from "./public.route"
 
 const AppRoute = () => {
   const router = createBrowserRouter([
@@ -15,7 +16,11 @@ const AppRoute = () => {
       children: [
         {
           index: true,
-          element: <Landing />,
+          element: (
+            <PublicRoute>
+              <Landing />
+            </PublicRoute>
+          ),
         },
         {
           path: "/home",

@@ -1,6 +1,4 @@
 node_modules/
-.env
-.env.local
 .env.*.local
 
 dist/
@@ -14,3 +12,4 @@ Thumbs.db
 
 .vscode/
 .idea/
+config.bat

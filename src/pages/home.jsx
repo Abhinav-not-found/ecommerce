@@ -5,7 +5,7 @@ import Card from "@/components/ui/card"
 import { useProduct } from "@/context/productContext"
 
 const Home = () => {
-  const { product,setProduct } = useProduct()
+  const { product, setProduct } = useProduct()
 
   const getAllProducts = async () => {
     const res = await axios.get("https://dummyjson.com/products")
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <Container>
       <main>
-        <div className='grid grid-cols-1 md:grid-cols-6 gap-4 gap-y-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 gap-y-6'>
           {product?.map((data) => {
             return <Card key={data.id} data={data} />
           })}

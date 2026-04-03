@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
-input[type="password"] {
-	font-family: Verdana;
+:root {
+	--blue: #3881fa;
+  --yellow:#ffe102;
 }

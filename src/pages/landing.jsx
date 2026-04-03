@@ -1,9 +1,12 @@
 import Container from "@/components/general/container"
+import Hero from "@/components/sections/hero"
 
 const Landing = () => {
   return (
     <Container>
-      <main>Landing Page</main>
+      <main>
+        <Hero />
+      </main>
     </Container>
   )
 }
